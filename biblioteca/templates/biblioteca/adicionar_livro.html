@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Livro</title>
+</head>
+<body>
+    <h1>Adicionar Livro</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Adicionar</button>
+    </form>
+    <a href="{% url 'dashboard' %}">Voltar para o Dashboard</a>
+</body>
+</html>

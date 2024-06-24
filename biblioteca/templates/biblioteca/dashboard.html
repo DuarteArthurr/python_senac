@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <style>
+        body {
+            background-color: {{ cor_fundo }};
+        }
+    </style>
+</head>
+<body>
+    <h1>Bem-vindo ao seu Dashboard</h1>
+    <a href="{% url 'adicionar_livro' %}">Adicionar Livro</a>
+    <a href="{% url 'personalizar' %}">Personalizar Preferências</a>
+    <a href="{% url 'logout' %}">Logout</a>
+    <h2>Seus Livros</h2>
+    <ul>
+        {% for livro in livros %}
+            <li>{{ livro.titulo }} - {{ livro.autor }} ({{ livro.ano_publicacao }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
